@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能风扇系统 · AT89C51</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0e17; color:#c9d1d9; font-family:"Microsoft YaHei",sans-serif; padding:40px 16px; }
+  .wrap { max-width:960px; margin:0 auto; }
+  h1 { text-align:center; font-size:26px; color:#fff; margin-bottom:8px; }
+  .sub { text-align:center; color:#5f7b9e; font-size:13px; letter-spacing:2px; margin-bottom:30px; }
+  .tags { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:34px; }
+  .tag { border:1px solid rgba(0,240,255,.35); color:#00f0ff; border-radius:999px;
+         padding:6px 16px; font-size:12px; letter-spacing:1px; }
+  h2 { font-size:17px; color:#00f0ff; margin:30px 0 14px; border-left:3px solid #00f0ff; padding-left:10px; }
+  img { width:100%; border-radius:10px; border:1px solid #1f2a3d; display:block; }
+  p.cap { text-align:center; color:#8b9bb4; font-size:13px; margin-top:10px; }
+  ul { list-style:none; margin-top:6px; }
+  li { padding:7px 0 7px 22px; position:relative; font-size:14px; line-height:1.7; }
+  li::before { content:"▸"; position:absolute; left:4px; color:#7b61ff; }
+  .back { display:block; text-align:center; margin:38px auto 0; color:#00f0ff; text-decoration:none;
+          border:1px solid rgba(0,240,255,.4); border-radius:999px; padding:10px 26px; width:max-content; }
+  .back:hover { background:rgba(0,240,255,.08); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>智能风扇系统</h1>
+  <div class="sub">基于 AT89C51 单片机的温度闭环控制系统</div>
+  <div class="tags">
+    <span class="tag">AT89C51</span><span class="tag">C 语言</span><span class="tag">Keil uVision4</span>
+    <span class="tag">Proteus 仿真</span><span class="tag">DS18B20</span><span class="tag">L298</span><span class="tag">LCD12864</span>
+  </div>
+
+  <h2>系统仿真运行</h2>
+  <img src="simulation.png" alt="Proteus 仿真运行">
+  <p class="cap">Proteus 仿真运行中：LCD12864 实时显示「智能风扇 / 温度 38℃ / 转速 5 档」</p>
+
+  <h2>系统流程图</h2>
+  <img src="flowchart.png" alt="系统流程图">
+  <p class="cap">温度采集 → 单片机运算 → 电机调速 → 液晶显示 的完整闭环</p>
+
+  <h2>技术要点</h2>
+  <ul>
+    <li>DS18B20 单总线时序驱动 —— <code>Qnewire.c</code> 手写位操作，不依赖库</li>
+    <li>五按键交互状态机：START / STOP / ＋ / － / MODE</li>
+    <li>L298 使能端 PWM 调速，五档转速手动 / 自动切换</li>
+    <li>显示与采集分离的模块化架构：<code>main.c</code> / <code>LCD12864.c</code> / <code>DS18B20.c</code></li>
+    <li>Keil 工程与 Proteus 原理图文件完整开源，可直接复现</li>
+  </ul>
+
+  <a class="back" href="https://github.com/shenyicong/smart-fan-at89c51">⭐ 查看源码仓库</a>
+</div>
+</body>
+</html>
