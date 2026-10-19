@@ -1,0 +1,32 @@
+# ── Keil C51 编译中间产物 ──
+*.OBJ
+*.LST
+*.M51
+*.SBR
+*.lnp
+*.plg
+*.bak
+*.build_log.htm
+*.map
+*.__i
+*.crf
+*.d
+*.o
+*.axf
+*.dep
+*.htm
+
+# ── Keil 用户界面状态 ──
+*.uvgui.*
+JLinkLog.txt
+
+# ── Proteus 备份文件 ──
+*.DBK
+*.PWI
+Last Loaded *
+Backup Of *
+
+# ── 系统文件 ──
+.DS_Store
+Thumbs.db
+desktop.ini
