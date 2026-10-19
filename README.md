@@ -9,6 +9,8 @@
 [![Sim](https://img.shields.io/badge/Simulation-Proteus-0a0f1e?style=flat-square&logo=circuitverse&logoColor=7b61ff)](#)
 [![License](https://img.shields.io/badge/Code-Original-00ff9d?style=flat-square)](#)
 
+### ▶ [**在线预览 https://shenyicong.github.io/smart-fan-at89c51/**](https://shenyicong.github.io/smart-fan-at89c51/)
+
 </div>
 
 <p align="center">
